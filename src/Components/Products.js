@@ -3,25 +3,26 @@ import "./Products.css"
 
 
 const Products = (props) => {
-    console.log(props)
     const {ProductData} = props
+    // console.log(props)
 
-    const helperFunction = ProductData.map((e,i) => {
+    const product = ProductData.map((e,i) => {
         return (
             <li key={i}>
                 <h3>{e.name}</h3>
                 <p>Price: ${e.price.toFixed(2)}</p>
                 <button>Add To Cart</button>
+                <br></br>
                 <img src={e.img}></img>
                 <p>{e.description}</p>
             </li>
         )
     })
     return (
-        <div>
+        <div className="garageSale">
             <h1>My Garage Sale</h1>
-            <div>
-                {helperFunction}
+            <div className="product">
+                {product}
             </div>
         </div>
     )

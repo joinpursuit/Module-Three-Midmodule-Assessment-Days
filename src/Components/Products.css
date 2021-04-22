@@ -1,3 +1,10 @@
-/* h1 {
-    text-align: center;
-} */
+.product {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.garageSale {
+    margin: 15px;
+
+}
