@@ -4,7 +4,8 @@ import "./Products.css"
 
 const Products = (props) => {
     const {ProductData} = props
-    // console.log(props)
+    
+    console.log(props)
 
     const product = ProductData.map((e,i) => {
         return (
