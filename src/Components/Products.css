@@ -1,11 +1,4 @@
-.app {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-}
-
-
-
-.Products {
+/* .product {
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -17,4 +10,4 @@
 }
 img {
     width: 150px;
-}
+} */
