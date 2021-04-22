@@ -1,0 +1,10 @@
+.ItemCards {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ItemCards> img {
+    width: 150px;
+  }
