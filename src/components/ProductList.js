@@ -5,7 +5,8 @@ import Item from './Item.js'
 export default function ProductList(prop) {
     // const productData = prop.productData
     // console.log('productData', productData)
-    
+    // addItemHandler = () => {      
+    // }
     return (
         <ul>
             {productData.map((item) => {

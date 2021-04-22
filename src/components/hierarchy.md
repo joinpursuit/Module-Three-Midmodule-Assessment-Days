@@ -1,10 +1,11 @@
 App
     ProductList
-        h1 item
-        div price
-        btn add to cart
-        img 
-        div item description
+        item
+            h1 item name
+            div price
+            btn add to cart
+            img 
+            div item description
     
     Cart
         ul li /ul

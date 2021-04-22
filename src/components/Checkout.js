@@ -28,8 +28,7 @@ export default function Checkout() {
                 
                 <button
                     type="submit"
-                    value= 'Buy Now' 
-                />
+                >Buy now</button>
             </form>
         </div>
     )

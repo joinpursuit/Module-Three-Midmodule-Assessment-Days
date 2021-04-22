@@ -1,14 +1,30 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function Cart() {
-    return (
-        <div>
-            <ul>
+export default class Cart extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            ul: '',
+            
 
-            </ul>
-            <div>Subtotal</div>
-            <div>Tax</div>
-            <div>Total</div>
+        }
+    } 
+    
+    itemsAdded = (e) => {
+        this.setState(
+            { ul: e.target.innerHTML}
+        )
+    }
+    render() {
+        return (
+            <div>
+                <ul>
+                    
+                </ul>
+                <div>Subtotal</div>
+                <div>Tax</div>
+                <div>Total</div>
         </div>
-    )
+        )
+    }
 }
