@@ -8,9 +8,12 @@ function Cart ({cart, subtotal}) {
                 return <li>{item.name} ${item.price}</li>
             })}
         </ul>
-        <h3>Subtotal: {subtotal.reduce((acc,curr)=> acc + curr)}</h3>
-        <h3>Tax:{subtotal}</h3>
-        <h3>Total:</h3>
+        <h3>Subtotal: 
+            {subtotal}
+            {/* {subtotal.reduce((acc,curr)=> acc + curr)} */}
+            </h3>
+        <h3>Tax: ${subtotal * .05}</h3>
+        <h3>Total:${(subtotal * .05) + subtotal}</h3>
         </div>
         )
 }

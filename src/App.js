@@ -6,7 +6,7 @@ import Cart from "./Component/Cart"
 
 
 class App extends React.Component {
-   state ={cart:[], subtotal:[0]}
+   state ={cart:[], subtotal:0}
 
 
  addCart = (item) => {
@@ -17,7 +17,7 @@ class App extends React.Component {
  }
  subtotal = (tot) => {
    this.setState((prevState)=>{
-     return {subtotal: [tot, ...prevState.subtotal]}
+     return {subtotal: tot + prevState.subtotal}
    })
    
  }
