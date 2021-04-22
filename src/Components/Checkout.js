@@ -29,7 +29,17 @@ export class Checkout extends Component {
             alert(`Credit card number is not valid`)
         } else if (this.state.zip.length < 5){
             alert(`Zip code is not valid`)
+        } else {
+            alert(`Purchase complete`)
         }
+
+        
+
+
+
+
+
+
         
     }
 
