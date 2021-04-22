@@ -1,0 +1,21 @@
+.Products{
+    display: grid;
+    grid-template-columns: repeat(2, .3fr ) ;
+    grid-template-rows: repeat(3, 1fr) ;
+    grid-gap: 1rem;
+}
+.product{
+    list-style: none;
+    text-align: center;
+}
+button{
+    width: 100px;
+    margin: 10px;
+}
+
+.Checkout{
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 20px;
+}
