@@ -2,3 +2,19 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
 }
+
+
+
+.Products {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.garageSale {
+    margin: 15px;
+
+}
+img {
+    width: 150px;
+}

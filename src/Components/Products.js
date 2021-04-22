@@ -22,9 +22,9 @@ const Products = (props) => {
     return (
         <div className="garageSale">
             <h1>My Garage Sale</h1>
-            <div className="product">
+            <ul className="Products">
                 {product}
-            </div>
+            </ul>
         </div>
     )
 }

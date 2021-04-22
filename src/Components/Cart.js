@@ -18,6 +18,7 @@ export class Cart extends Component {
         return (
             <div>
                 <h2>Cart </h2>
+                <ul></ul>
                 <h3>Subtotal: </h3>
                 <h3>Tax: </h3>
                 <h3>Total: </h3>

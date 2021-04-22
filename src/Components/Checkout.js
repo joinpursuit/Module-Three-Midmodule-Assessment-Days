@@ -25,12 +25,12 @@ export class Checkout extends Component {
 
         if(this.state.lname.length === 0 || this.state.fname.length === 0 || this.state.email.length === 0 ) {
             alert("Input is not valid")
-        } else if (this.state.card.length < 16) {
+        } else if (this.state.card.length !== 16) {
             alert("Credit card number is not valid")
-        } else if (this.state.zip.length < 5) {
+        } else if (this.state.zip.length !== 5) {
             alert("Zip code is not valid")
         } else {
-            alert("Purchase complete")
+            alert("Purchase complete! You will be charged $73.49")
         }
     }
 
