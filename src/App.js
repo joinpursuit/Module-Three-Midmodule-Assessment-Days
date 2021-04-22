@@ -1,7 +1,16 @@
 import "./App.css";
+import ProductList from './components/ProductList.js';
+import Cart from './components/Cart.js';
+import Checkout from './components/Checkout.js';
 
 const App = () => {
-  return <h1>Hello, world!</h1>;
+  return (
+    <>
+      <ProductList />
+      <Cart />
+      <Checkout />
+    </>
+  )
 };
 
 export default App;
