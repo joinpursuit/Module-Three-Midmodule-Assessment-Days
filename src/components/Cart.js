@@ -1,24 +1,21 @@
 import React, { Component } from 'react'
 
 export default class Cart extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            ul: '',
-            
-
-        }
+    constructor() {
+        super()
+        
     } 
     
-    itemsAdded = (e) => {
-        this.setState(
-            { ul: e.target.innerHTML}
-        )
+    itemsAdded = () => {
+        // let cart = document.querySelector("#cart")
+        // let item = document.createElement('li')
+        // item.appendChild(createTextNode({Item}))
+        this.setState ({})
     }
     render() {
         return (
             <div>
-                <ul>
+                <ul id='cart'>
                     
                 </ul>
                 <div>Subtotal</div>
