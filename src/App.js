@@ -30,7 +30,7 @@ class App extends React.Component {
     let total = sub + taxes
 
     return (
-      <div className= 'App'>
+      <div className= 'Products'>
         <div className='Store'>
           <h1>My Garage Sale</h1>
           <Store prodt={this.state.products}  handleData={this.handleData}/>

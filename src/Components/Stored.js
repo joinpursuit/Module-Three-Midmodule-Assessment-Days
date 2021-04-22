@@ -6,7 +6,7 @@ const Stored =({shopping, handleData})=> {
         <div>
             <div className='each'>
                <h2>{name}</h2> 
-               <p>Price: ${price}</p>
+               <p>Price: ${price.toFixed(2)}</p>
                <button onClick={()=> handleData(shopping)}>Add to Cart</button>
                <br></br>
                <img src={img} alt='shopping' />
