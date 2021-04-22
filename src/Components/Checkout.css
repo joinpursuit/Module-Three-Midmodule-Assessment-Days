@@ -1,0 +1,13 @@
+.form {
+    display: grid;
+}
+.form input {
+    width: 15em;
+}
+.form label {
+    margin-top: 5px;
+}
+.form button {
+    width: 8em;
+    margin-top: 5px;
+}
