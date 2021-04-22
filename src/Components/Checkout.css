@@ -2,7 +2,7 @@
     display: grid;
 }
 .form input {
-    width: 15em;
+    width: 10em;
 }
 .form label {
     margin-top: 5px;
