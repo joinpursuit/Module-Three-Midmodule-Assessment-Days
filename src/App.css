@@ -1,1 +1,28 @@
+.App {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 
+.Products {
+    border: 1px solid green;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 50%;
+    grid-column: 1 / 2;
+}
+
+.Product {
+    width: 40%;
+}
+
+/* .even {
+    grid-column: 1 / 2;
+}
+
+.odd {
+    grid-column: 2 / 3;
+} */
+
+.Cart {
+    grid-column: 2 / 3;
+}
