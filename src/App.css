@@ -1,1 +1,16 @@
+.Main{
+    display: grid;
+}
+.ItemList img{
+    height: 150px;
+    width: auto;
+}
+.ItemList li{
+    list-style: none;
+}
+.Cart{
 
+}
+.CheckOut{
+
+}
