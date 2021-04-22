@@ -32,14 +32,6 @@ export class Checkout extends Component {
         } else {
             alert(`Purchase complete`)
         }
-
-        
-
-
-
-
-
-
         
     }
 

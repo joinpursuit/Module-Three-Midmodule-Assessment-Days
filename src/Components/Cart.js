@@ -10,8 +10,6 @@ function Cart(props) {
         )
     })
 
-
-
     return (
         
         <div>
