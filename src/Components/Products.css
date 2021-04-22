@@ -5,6 +5,7 @@
     grid-gap: 1rem;
 }
 .product{
+    display: grid;
     list-style: none;
     text-align: center;
 }
@@ -16,6 +17,6 @@ button{
 .Checkout{
     display: flex;
     flex-direction: column;
-    width: 150px;
+    width: 350px;
     height: 20px;
 }

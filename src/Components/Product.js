@@ -2,18 +2,18 @@ import React from 'react'
 import './Products.css'
 
 const Product =(props)=>{
-    const {name, price, img, addProduct, description }= props
+    const {product, addProduct }= props
     const addCart =(event)=>{ 
-        addProduct(name,price)
+        addProduct(product)
 
     }
     return (
         <li className = "product" >
-         <h3>{name}</h3>
-         <p>Price: {price.toFixed(2)}</p>
+         <h3>{product.name}</h3>
+         <p>Price: ${product.price.toFixed(2)}</p>
          <button onClick ={addCart}>Add To Cart</button>
-         <img src = {img} />
-         <p>{description}</p>
+         <img src = {product.img} alt ="product" />
+         <p>{product.description}</p>
         </li>
     )
 }

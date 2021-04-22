@@ -9,11 +9,8 @@ const Products =({ productData, addProduct}) => {
             <ul className ="Products" >
                 {productData.map((product)=>{
                    return (
-                     <product
-                     name ={product.name}
-                     price ={product.price}
-                     img ={ product.img}
-                     description ={product.description}
+                     <Product
+                     product ={product}
                      key ={product.id}
                      addProduct={addProduct}
                      />
