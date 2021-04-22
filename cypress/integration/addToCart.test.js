@@ -35,7 +35,7 @@ describe("add to cart", () => {
       cy.get("li").contains(formatPrice(price));
     });
 
-    it("the subtotal updates with the price of the item", () => {
+    it("the subtotal updates with the price of the product", () => {
       addItemToCart();
 
       cy.findByText("Subtotal: $19.99").should("exist");
