@@ -1,0 +1,28 @@
+.TreasureIsland {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 10px;
+}
+
+.TreasureIsland li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.TreasureIsland img {
+  width: 150px;
+  height: 150px;
+}
+
+.TreasureIsland p {
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: center;
+  width: 90%;
+}
+
+.TreasureIsland button {
+  margin: 10px;
+}
