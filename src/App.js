@@ -4,31 +4,26 @@ import Checkout from "./Checkout"
 import Items from "./Items"
 import productData from "./data/productData"
 
-
+import "./App.css";
 export default class App extends Component {
   render() {
-    const items = {productData}
-    const  items  = this.props
-    const addedItems = addedItems
+
 
 
     return (
-      <div class="App">
+      <div className="App">
         <div>
+
           <div className="leftSide" />
           <h1>My Garage Sale</h1>
-          <Items Items={items} />
+          <Items items={productData} />
         </div>
         <div className="rightSide">
-          <Cart
-            addedItems={addedItems}
-            subtotal={subtotal}
-            tax={tax}
-            total={total} />
+          <Cart/>
+          <h1>Cart</h1>
 
-          <Checkout
-            total={total} />
-
+          <Checkout/>
+          <h1>Checkout</h1>
 
         </div>
       </div>
@@ -37,8 +32,12 @@ export default class App extends Component {
 }
 
 
-import "./App.css";
+
+// addedItems={addedItems}
+//             subtotal={subtotal}
+//             tax={tax}
+//             total={total} 
 
 
 
-
+//             total={total} 
