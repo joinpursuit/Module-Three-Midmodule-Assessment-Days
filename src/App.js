@@ -12,25 +12,32 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      clickedItem: ''
+      cartItems: []
     }
   }
 
   handleClick = (e) => {
-    let cartItem = e.target.name + e.target.price
-    console.log(cartItem)
+    let cartItem = e.target
     console.log(e.target)
+    console.log(cartItem)
   }
 
   render() {
-    console.log(this.handleClick)
+    console.log(this.state.cartItems)
+    let cartItems = productData.map((item, index) => {
+      return <Cart key={index} name={item.name} price={item.price} />
+    })
 
     return (
-      <div>
-        <h1>My Garage Sale</h1>
-        <Products productData={productData} handleClick={this.handleClick} />
-        <Cart />
-        <Checkout />
+      <div className='App'>
+        <section className="left">
+          <h1>My Garage Sale</h1>
+          <Products productData={productData} handleClick={this.handleClick} />
+        </section>
+        <section className="right">
+          {cartItems}
+          <Checkout />
+        </section>
       </div>
     )
   }

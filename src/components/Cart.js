@@ -1,12 +1,18 @@
 import React from 'react'
 
-function Cart() {
+function Cart(props) {
+
+
+
     return (
         <div className='Cart'>
-            <h2>Cart</h2>
+            <h1>Cart</h1>
             <ul>
-                
+                <li>{props.name}</li>
             </ul>
+            <h2>Subtotal: </h2>
+            <h2>Tax: </h2>
+            <h2>Total: </h2>
         </div>
     )
 }
