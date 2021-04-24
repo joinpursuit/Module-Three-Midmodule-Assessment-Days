@@ -4,6 +4,7 @@ import productData from './data/productData.js'
 import Products from './components/Products'
 import Cart from './components/Cart'
 import Checkout from './components/Checkout'
+import formatPrice from './helpers/formatPrice'
 
 
 
@@ -12,21 +13,26 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      cartItems: []
+      cartItems: [],
     }
+    this.subtotal = 0
+    this.tax = 0
+    this.total = 0
   }
 
-  handleClick = (e) => {
-    let cartItem = e.target
-    console.log(e.target)
-    console.log(cartItem)
-  }
+  handleClick = (name, price) => { 
+    this.setState({
+      cartItems: this.state.cartItems.concat({name, price}),
+    })
+    this.subtotal = this.subtotal + price
+    this.tax = this.subtotal * .05
+    this.total = this.tax + this.subtotal
+
+  } // Because we can calculate subTotal based on other things that live inside of state, it doesn't belong in state
+
 
   render() {
     console.log(this.state.cartItems)
-    let cartItems = productData.map((item, index) => {
-      return <Cart key={index} name={item.name} price={item.price} />
-    })
 
     return (
       <div className='App'>
@@ -35,7 +41,7 @@ class App extends React.Component {
           <Products productData={productData} handleClick={this.handleClick} />
         </section>
         <section className="right">
-          {cartItems}
+          <Cart cartItems={this.state.cartItems} subTotal={this.subtotal.toFixed(2)} tax={this.tax.toFixed(2)} total={this.total.toFixed(2)}/>
           <Checkout />
         </section>
       </div>
