@@ -14,10 +14,67 @@ class App extends React.Component {
     super()
     this.state = {
       cartItems: [],
+      fname: '',
+      lname: '',
+      email: '',
+      creditCard: '',
+      zipCode: '',
+
     }
     this.subtotal = 0
     this.tax = 0
     this.total = 0
+  }
+
+  allFieldsValid = () => {
+    const {cartItems, fname, lname, email, creditCard, zipCode} = this.state
+    return fname && lname && email && creditCard.length === 16 && zipCode.length === 5
+  }
+  handleSubmit = (e) => {
+    e.preventDefault()
+    if (this.allFieldsValid()) {
+      alert(`Yay! Purchase complete! You will be charged $${this.total.toFixed(2)}`)
+    }
+    else if (this.state.creditCard.length != 16) {
+      alert("Credit card number is not valid")
+    }
+    else if (this.state.zipCode.length != 5) {
+      alert("Zip code is not valid")
+    }
+    else {
+      alert("Input is not valid")
+    }
+  }
+  handleFname = (e) => {
+    const firstName = e.target.value
+    this.setState({
+        fname: firstName
+    })
+    console.log(firstName)
+  }
+  handleLname = (e) => {
+    const lastName = e.target.value
+    this.setState({
+      lname: lastName
+    })
+  }
+  handleEmail = (e) => {
+    const eMail = e.target.value
+    this.setState({
+      email: eMail
+    })
+  }
+  handleZipCode = (e) => {
+    const zipcode = e.target.value
+    this.setState({
+      zipCode: zipcode
+    })
+  }
+  handleCreditCard = (e) => {
+    const creditcard = e.target.value
+    this.setState({
+      creditCard: creditcard
+    })
   }
 
   handleClick = (name, price) => { 
@@ -31,8 +88,10 @@ class App extends React.Component {
   } // Because we can calculate subTotal based on other things that live inside of state, it doesn't belong in state
 
 
+
   render() {
     console.log(this.state.cartItems)
+    console.log(this.state.zipCode.length, this.state.creditCard.length)
 
     return (
       <div className='App'>
@@ -42,7 +101,8 @@ class App extends React.Component {
         </section>
         <section className="right">
           <Cart cartItems={this.state.cartItems} subTotal={this.subtotal.toFixed(2)} tax={this.tax.toFixed(2)} total={this.total.toFixed(2)}/>
-          <Checkout />
+          <Checkout handleSubmit={this.handleSubmit} allFieldsValid={this.allFieldsValid} handleFname={this.handleFname} 
+          handleLname={this.handleLname} handleEmail={this.handleEmail} handleCreditCard={this.handleCreditCard} handleZipCode={this.handleZipCode} />
         </section>
       </div>
     )

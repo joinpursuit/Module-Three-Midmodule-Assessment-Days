@@ -1,10 +1,11 @@
 * App.js
     {Props -> array}
     {State}
+        Add To Cart button
     <header>
 
     Products.js
-    {Props -> name, price, image, description}
+    { Props     -       productData: [{},{}], handleClick() }
         Product.js
         {Props}
         <Name>
@@ -13,6 +14,7 @@
         <image>
         <description>
     Cart.js
+    { Props     -       cartItems: [{},{}], subtotal }
         <ul>
             <li> (Item Name): (Price)
         </ul>
