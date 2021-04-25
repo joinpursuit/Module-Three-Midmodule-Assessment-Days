@@ -14,7 +14,7 @@ function Product(props) {
     return (
         <div className='Product'>
             <h2>{props.name}</h2>
-            <p>Price:${props.price.toFixed(2)}</p>
+            <p>Price: ${props.price.toFixed(2)}</p>
             <button onClick={() => {props.handleClick(props.name, props.price)}}>Add To Cart</button><br/>
             <img src={props.image}/>
             <p>{props.description}</p>
