@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Cart from "./components/Cart";
-//import CheckoutForm from "./components/CheckoutForm"
+import CheckoutForm from "./components/CheckoutForm"
 import MainListing from "./components/MainListing"
 
 class App extends React.Component {
@@ -46,7 +46,9 @@ class App extends React.Component {
           total = {total}
           subtotal = {subtotal}
           />
-        
+        <CheckoutForm
+        total = {total}
+        />
         </div>
       </div>
     );

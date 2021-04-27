@@ -5,7 +5,7 @@ const MainListing = ({ products, addToCart}) => {
     return (
         <section className="Main" >
           {products.map((product) => (
-            <ItemCards {...product} key={product.id} addToCart={addToCart} />
+            <ItemCards product={product} key={product.id} addToCart={addToCart} />
           ))}
           </section>
     )
