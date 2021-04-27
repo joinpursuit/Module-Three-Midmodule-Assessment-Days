@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ProductCard({name, price, img, description, id, key,addToCart, formatPrice}) {
+export default function ProductCard({name, price, img, description, id, key,addToCart, formatPrice,}) {
     const product = {name, price, id,}
     return (
         <div>
