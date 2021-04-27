@@ -1,16 +1,15 @@
-import React from 'react';
-import FormatPrice from '../helpers/formatPrice';
+const ProductCard = ({ product, addToCart }) => {
+    const { name, price, description, img } = product
 
-function ProductCard(props) {
     return (
-        <div>
-            <h4>{props.name}</h4>
-            <p>Price: ${props.price}</p>
-            <button type='button' onClick={(e) => props.addProduct(props.id)}>Add To Cart</button>
-            <img src={props.image} alt={props.name}></img>
-            <p>{props.description}</p>
-        </div>
+        <li>
+            <h3>{name}</h3>
+            <p>Price: ${price.toFixed(2)}</p>
+            <button onClick={() => addToCart(product)}>Add To Cart</button>
+            <img src={img} alt={name} />
+            <p>{description}</p>
+        </li>
     )
 }
 
-export default ProductCard
+export default ProductCard;
