@@ -1,78 +1,43 @@
 // import React from 'react'
-import productData from './data/productData'
-import Products from './data/Products'
-import Checkout from './data/Checkout'
-import Cart from './data/Cart'
+import productData from "./data/productData";
+import Products from "./data/Products";
+import Checkout from "./data/Checkout";
+import Cart from "./data/Cart";
 import "./App.css";
-// import formatPrice from './helpers/formatPrice'
 
-
-// const App = () => {
-//   return <h1>Hello, world!</h1>;
-// };
-
-// export default App;
-
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class App extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      cart: [],
-
-    }
-    this.data = productData
+      addCart: [],
+    };
+    this.data = productData;
   }
 
-  addCart = (product) => {
-    let cart = this.state.cart
-    this.setState({cart: cart.concat(product)
-    })
-  }
-  
+  addedCart = (item) => {
+    let addCart = this.state.addCart;
+    this.setState({ addCart: addCart.concat(item) });
+  };
+
   render() {
-    let {cart} = this.state
-    let subtotal = cart.reduce((a,b) => a+b.price,0)
-     let tax = subtotal * 0.05
-    let total = subtotal + tax
-
+    const { addCart } = this.state;
+    const subtotal = addCart.reduce((a, b) => a + b.price, 0);
+    const tax = subtotal * 0.05;
+    const total = subtotal + tax;
 
     return (
-      <div className='App'>
+      <div className="App">
         <div>
           <h1>My Garage Sale</h1>
-          <Products
-          products= {this.data}
-          handleClick = {this.addCart}
-          />
+          <Products data={this.data} addedCart={this.addedCart} />
         </div>
         <div>
-         <Cart 
-          cart = {cart}
-          subtotal = {subtotal}
-          tax= {tax}
-          total = {total}
-
-         
-         />
-         <Checkout
-         total={total}
-         />
-          {/* // cart = {cart}
-          // subtotal = { subtotal || 0}
-          // tax = { tax || 0 }
-          // total = { total || 0 }
-
-           ///>
-           <Checkout
-
-          {/* //  total = { total || 0}
-           // /> */}
-
+          <Cart addCart={addCart} subtotal={subtotal} tax={tax} total={total} />
+          <Checkout total={total} />
         </div>
-        
       </div>
-    )
+    );
   }
 }

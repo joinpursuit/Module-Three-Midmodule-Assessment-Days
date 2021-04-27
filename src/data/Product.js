@@ -1,20 +1,16 @@
-import React from 'react'
-import "./Products"
-import formatPrice from '../helpers/formatPrice'
+import React from "react";
+import formatPrice from "../helpers/formatPrice";
 
-function Product ({product,handleClick}) {
-    const {name,price, img, description} = product
-    return (
-        <div>
-            <h3>{name}</h3>
-            <p>Price: {formatPrice(price)}</p>
-            {"\n"}
-            {/* <button>Add to Cart</button> */}
-            <button onClick={()=> handleClick(product)}>Add to Cart</button>
-            <br></br>
-            <img src={img} alt="product"/>
-            <p>{description}</p>
-        </div>
-    )
+function Product(product) {
+  const { name, price, img, description, item, addedCart } = product;
+  return (
+    <div>
+      <h3>{name}</h3>
+      <p>Price: {formatPrice(price)}</p>
+      <button onClick={() => addedCart(item)}>Add To Cart</button>
+      <img src={img} alt={name} />
+      <p>{description}</p>
+    </div>
+  );
 }
-export default Product
+export default Product;
