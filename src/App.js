@@ -38,7 +38,7 @@ class App extends React.Component {
           addToCart = {this.addToCart}
           />
         </div>
-        <div className="rightSide" >
+        <div className ="right_column" >
           <Cart
           bought={boughtProducts}
           purchasedCart = {purchasedCart}

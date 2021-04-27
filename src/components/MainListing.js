@@ -3,7 +3,7 @@ import ItemCards from "./ItemCards"
 import "./MainListing.css"
 const MainListing = ({ products, addToCart}) => {
     return (
-        <section className="Main" >
+        <section className="Products" >
           {products.map((product) => (
             <ItemCards product={product} key={product.id} addToCart={addToCart} />
           ))}
