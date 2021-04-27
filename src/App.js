@@ -9,8 +9,16 @@ export class App extends Component {
     super()
     
     this.state = {
-      cartItems: productData
+      cartItems: []
     }
+    this.data = productData
+  }
+
+
+  addToCart = (item) => {
+    this.setState((prevState) => {
+      return {cartItems: [item, ...prevState.cartItems]}
+    })
   }
 
   handleClick = () => {
@@ -18,11 +26,18 @@ export class App extends Component {
   }
 
   render() {
+    
+    const {cartItems} = this.state
+    let subtotal = cartItems.reduce((a, b) => a + b.price, 0)
+    let tax = cartItems.reduce((a, b) => a + b.price, 0) * 0.05
+    let total = subtotal + tax
+  
+
     return (
       <div>
-        <ProductsList productData={productData} handleClick={this.handleClick}/>
-        <Checkout />
-        <Cart displayCart={this.state.cartItems} />
+        <ProductsList addToCart={this.addToCart}/>
+        <Checkout total={total} />
+        <Cart cartItems={this.state.cartItems} subtotal={subtotal || 0} tax={tax || 0} total={total || 0} />
       </div>
     )
   }

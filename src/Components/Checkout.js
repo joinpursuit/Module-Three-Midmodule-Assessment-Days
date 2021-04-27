@@ -22,6 +22,7 @@ export class Checkout extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
+        const {total} = this.props
 
         if (this.state.firstName.length === 0 || this.state.lastName.length === 0 || this.state.email.length === 0 || this.state.credit.length === 0 || this.state.zip.length === 0) {
             alert(`Input is not valid`)
@@ -30,7 +31,7 @@ export class Checkout extends Component {
         } else if (this.state.zip.length < 5){
             alert(`Zip code is not valid`)
         } else {
-            alert(`Purchase complete`)
+            alert(`Purchase complete. You will be charged $${total.toFixed(2)}`)
         }
         
     }

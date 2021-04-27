@@ -2,7 +2,9 @@ import React from 'react'
 
 function Cart(props) {
 
-    const items = props.displayCart.map((item, i) => {
+    const {cartItems, subtotal, total, tax} = props
+
+    const items = cartItems.map((item, i) => {
         return (
             <li key={i}>
                 {item.name}: ${item.price.toFixed(2)}
@@ -18,9 +20,9 @@ function Cart(props) {
                 {items} 
             </ul>
 
-            <h3>Subtotal: </h3>
-            <h3>Tax: </h3>
-            <h3>Total: </h3>
+            <p>Subtotal: ${subtotal.toFixed(2)}</p>
+            <p>Tax: ${tax.toFixed(2)}</p>
+            <p>Total: ${total.toFixed(2)}</p>
         </div>
 
     )
