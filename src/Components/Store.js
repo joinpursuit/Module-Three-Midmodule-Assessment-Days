@@ -4,20 +4,20 @@ import Stored from "./Stored.js"
 const Store =( {prodt, handleData})=> {
     
     return (
-        <div className="storeItems">
-            <ul>
-                {prodt.map((shopping)=>{
-                    return(
-                        <Stored  
-                        key = {shopping.id}
-                        shopping = {shopping} 
-                        handleData={handleData}
-                        />
-                    )
-                })}
-            </ul>
+        
+        <ul className="storeItems">
+            {prodt.map((shopping)=>{
+                return(
+                    <Stored  
+                    key = {shopping.id}
+                    shopping = {shopping} 
+                    handleData={handleData}
+                    />
+                )
+            })}
+        </ul>
             
-        </div>
+        
     )
     
 }

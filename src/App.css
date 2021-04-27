@@ -1,18 +1,21 @@
 .Products{
     display: grid;
-    grid-template-columns:repeat(2, 1fr)
+    grid-template-columns:repeat(2, 1fr);
+    
 }
 .Store{
    
     grid-template-columns: 1/2;
     gap: 10px;
+   
     
 }
 .Shops-Card{
- margin-top: 150px;
+  margin-top: 150px;
   float: right;
   grid-template-columns: 2/3;
   text-align: center;
+  
   
 }
 .form label{

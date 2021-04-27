@@ -1,28 +1,29 @@
 import React, { Component } from 'react'
 
+
 export default class CardInfo extends Component {
     constructor(){
         super()
-        this.state ={
-            FirstName: '',
-            LastName: '',
-            Email: '',
-            CreditCard: '',
-            Zipcode: ''
+        this.state = {
+            firstName: '',
+            lastName: '',
+            email: '',
+            creditCard: '',
+            zipCode: ''
         }
     }
     handleBTN = (e) =>{
         e.preventDefault()
         const{total} = this.props
-        const {FirstName, LastName, Email, CreditCard, Zipcode} = this.state
-        if(!FirstName || !LastName || !Email || !CreditCard || !Zipcode){
-            alert("Input is not Valid")
-        }else if(CreditCard.length < 16){
-            alert("Credit card number is not valid")
-        }else if(Zipcode.length < 5){
-            alert("Zip code is not valid")
+        const {firstName, lastName, email, creditCard, zipCode} = this.state
+        if(!firstName || !lastName || !email || !creditCard || !zipCode){
+            window.alert('Input is not valid.')
+        }else if(creditCard.length < 16){
+            window.alert(`Input is not valid. \nCredit card number is not valid.`)
+        }else if(zipCode.length < 5){
+            window.alert(`Input is not valid. \nZip code is not valid.`)
         }else{
-            alert(`"Purchase complete \n You will be charge $${total.toFixed(2)}`)
+            window.alert(`"Purchase complete \n You will be charge $${total.toFixed(2)}`)
         }
 
     }
@@ -35,41 +36,46 @@ export default class CardInfo extends Component {
 
     }
     render() {
-        console.log(this.state.FirstName)
+        console.log(this.state.firstName)
         return (
             <div>
                 <form className="form" onSubmit={this.handleBTN}>
                     <h2>Checkout</h2>
-                    <label htmlFor={'FirstName'}>First Name</label>
+                    <label htmlFor={'firstName'}>First Name</label>
                     <input  
-                     id={'FirstName'}
-                     name = 'FirstName' 
-                     value={this.FirstName} 
-                     onChange={this.handlePayment}></input>
-                    <label htmlFor={'LastName'}>Last Name</label>
+                     id={'firstName'}
+                     name = 'firstName' 
+                     value={this.firstName} 
+                     onChange={this.handlePayment}/>
+
+                    <label htmlFor={'lastName'}>Last Name</label>
                     <input 
-                    id={'LastName'}  
-                    name = 'LastName' 
-                    value={this.LastName}  
-                    onChange={this.handlePayment}></input>
-                    <label htmlFor={'Email'}>Email</label>
+                    id={'lastName'}  
+                    name = 'lastName' 
+                    value={this.lastName}  
+                    onChange={this.handlePayment}/>
+
+                    <label htmlFor={'email'}>Email</label>
                     <input 
-                    id={'Email'}  
-                    name = 'Email' 
-                    value={this.Email}  
-                    onChange={this.handlePayment}></input>
-                    <label htmlFor={'CreditCard'}>Credit Card</label>
+                    id={'email'}  
+                    name = 'email' 
+                    value={this.email}  
+                    onChange={this.handlePayment}/>
+
+                    <label htmlFor={'creditCard'}>Credit Card</label>
                     <input 
-                    id={'CreditCard'} 
-                    name = 'CreditCard' 
-                    value={this.CreditCard} 
-                     onChange={this.handlePayment}></input>
-                    <label htmlFor={'Zipcode'}>Zip Code</label>
+                    id={'creditCard'} 
+                    name = 'creditCard' 
+                    value={this.creditCard} 
+                     onChange={this.handlePayment}/>
+
+                    <label htmlFor={'zipCode'}>Zip Code</label>
                     <input 
-                    id={'Zipcode'}  
-                    name = 'Zipcode'
-                    value={this.Zipcode} 
-                    onChange={this.handlePayment}></input>
+                    id={'zipCode'}  
+                    name = 'zipCode'
+                    value={this.zipCode} 
+                    onChange={this.handlePayment}/>
+
                     <button type='submit'>Buy Now</button>
                 </form>   
             </div>

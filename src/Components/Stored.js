@@ -1,20 +1,18 @@
 import React from 'react'
 
+
 const Stored =({shopping, handleData})=> {
     const {name, price, description, img}= shopping
     return (
-        <div>
-            <div className='each'>
-               <h2>{name}</h2> 
-               <p>Price: ${price.toFixed(2)}</p>
-               <button onClick={()=> handleData(shopping)}>Add to Cart</button>
-               <br></br>
-               <img src={img} alt='shopping' />
-               <p>{description}</p>
-
-            </div>
+        <li className='each'>
+            <h3>{name}</h3> 
+             Price: ${price.toFixed(2)}
+             
+            <button onClick={()=> handleData(shopping)}>Add To Cart</button>
             
-        </div>
+            <img src={img} alt='shopping' />
+            <p>{description}</p>
+       </li>
     )
 }
 export default  Stored

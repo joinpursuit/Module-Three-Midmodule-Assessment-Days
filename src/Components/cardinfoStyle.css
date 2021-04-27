@@ -1,0 +1,9 @@
+.form label{
+    display: block;
+   }
+   .form button{
+       display: block;
+       text-align: center;
+       grid-template-columns: 2/3;
+       margin: auto;
+   }
