@@ -19,7 +19,6 @@ export class App extends Component {
     }));
   };
   render() {
-    console.log(this.state.products);
     return (
       <div>
         <div className="App">

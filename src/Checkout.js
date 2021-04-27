@@ -12,6 +12,13 @@ export class Checkout extends Component {
     };
   }
 
+  onlyNums = (input) => {
+    let arr = input.split("");
+    return arr.every((elem) => {
+      return !isNaN(elem);
+    });
+  };
+
   handleSubmit = (e) => {
     const { firstName, lastName, email, zipCode, creditCard } = this.state;
     const { products } = this.props;
@@ -31,14 +38,30 @@ export class Checkout extends Component {
     };
     e.preventDefault();
     if (firstName && lastName && email && zipCode && creditCard) {
-      if (!isNaN(creditCard) && !isNaN(zipCode)) {
-        alert(
-          `Purchase complete. You will be charged: $${(
-            tax() + subtotal()
-          ).toFixed(2)}`
-        );
-      } else {
-        alert("Input is not valid");
+      if (!this.onlyNums(creditCard) && this.onlyNums(zipCode)) {
+        alert("Input is not valid \nCredit card is not valid");
+      }
+      if (!this.onlyNums(zipCode) && this.onlyNums(creditCard)) {
+        alert("Input is not valid \nZip code is not valid");
+      }
+      if (!this.onlyNums(zipCode) && !this.onlyNums(creditCard)) {
+        alert("Input is not valid Zip code and credit card are not valid");
+      } else if (this.onlyNums(zipCode) && this.onlyNums(creditCard)) {
+        if (creditCard.length !== 16 && zipCode.length === 5) {
+          alert("Input is not valid \nCredit card number is not valid");
+        }
+        if (zipCode.length !== 5 && creditCard.length === 16) {
+          alert("Input is not valid \nZip code is not valid");
+        }
+        if (creditCard.length !== 16 && zipCode.length !== 5) {
+          alert("Zip code is not valid\nCredit card is not valid");
+        } else if (creditCard.length === 16 && zipCode.length === 5) {
+          alert(
+            `Purchase complete. You will be charged: $${(
+              tax() + subtotal()
+            ).toFixed(2)}`
+          );
+        }
       }
     } else {
       alert("Input is not valid");
@@ -53,6 +76,7 @@ export class Checkout extends Component {
 
   render() {
     const { firstName, lastName, email, zipCode, creditCard } = this.state;
+    console.log(creditCard);
     return (
       <form onSubmit={this.handleSubmit}>
         <h2>Checkout</h2>
