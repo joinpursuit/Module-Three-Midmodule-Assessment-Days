@@ -1,1 +1,18 @@
+.Products{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.ItemList img{
+    height: 150px;
+    width: auto;
+}
 
+.ItemList ul{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.EachItem{
+    width: 50%;
+}
