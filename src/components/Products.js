@@ -1,16 +1,14 @@
 import ProductCard from "./ProductCard"
 import React from 'react'
 
-const Product = ({students}) => {
+const Products = ({products}) => {
+    const cards = products.map((e) =>{
+        return <ProductCard key={e.id} products={e}/>
+    })
     return (
-        <section>
-            {students.map((student, i) => (
-                <ProductCard {...student} key={student.id} />
-            ))}
-        </section>
+    <section className="Products">{cards}</section>
     )
 }
 
-
-
+export default Products
 
