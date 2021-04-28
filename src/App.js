@@ -2,7 +2,7 @@ import "./App.css";
 import React from 'react'
 import productData from './data/productData'
 import Cart from './components/Cart'
-// import Checkout from './components/Checkout'
+import Checkout from './components/Checkout'
 import Products from './components/Products'
 //
 
@@ -16,7 +16,7 @@ class App extends React.Component {
   }
 
   this.data = productData
-  console.log (productData)
+
   }
   addToCart = (item) => {
   let purchase = this.state.purchase
@@ -36,16 +36,21 @@ class App extends React.Component {
         <h2>My Garage Sale</h2>
         <Products
         products = {this.data}
-        addToCart={this.addToCart}/>
+        purchase={this.addToCart}/>
         </div>
 
-        <div>
+        <div className = "cart">
         <Cart 
         purchase = {purchase}
         subtotal = {subtotal}
         tax = {tax}
         total = {total}
         />
+        </div>
+
+        <div className = "checkout">
+        <Checkout />
+
         </div>
 
       </div>
