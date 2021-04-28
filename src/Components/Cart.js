@@ -1,11 +1,22 @@
 import React from 'react'
 
-function Cart() {
+const Cart = ({ inCart, subTotal, tax, total }) => {
+	const productList = inCart.map((product) => {
+		return (
+			<li key={product.id}>
+				{product.name}: ${product.price.toFixed(2)}
+			</li>
+		)
+	})
 
 	return (
-		<div>
+		<section>
 			<h2>Cart</h2>
-		</div>
+			<ul>{productList}</ul>
+			<h3>Subtotal: ${subTotal.toFixed(2)}</h3>
+			<h3>Tax: ${tax.toFixed(2)}</h3>
+			<h3>Total: ${total.toFixed(2)}</h3>
+		</section>
 	)
 }
 
