@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductData from '../data/productData';
 import Item from './Item'
-
+import './ItemList.css'
 
 
 
@@ -12,7 +12,7 @@ const ItemList = ({addItem}) => {
     })
     
     return (
-        <section className="Items">
+        <section className="Products">
             <h2>My Garage Sale</h2>
             <ul>
                 {item}

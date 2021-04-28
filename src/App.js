@@ -1,8 +1,10 @@
 import "./App.css";
-import React from 'react'
-import ItemList from './Components/ItemList'
-import shoppingCart from './Components/shoppingCart'
-import formatPrice from './helpers/formatPrice'
+import React from 'react';
+import ItemList from './Components/ItemList';
+import ShoppingCart from './Components/shoppingCart';
+import Checkout from './Components/checkout';
+import "./App.css";
+
 
 class App extends React.Component{
   state = {Cart: []}
@@ -13,14 +15,15 @@ class App extends React.Component{
     })
   }
   render() {
-    // const { cart } = this.state;
     let subTotal = 0
-    // this.state.Cart.forEach(item => subTotal+= item.price);
+    this.state.Cart.forEach(item => subTotal+= item.price);
+    let tax = subTotal*.05
 
     return(
       <div className="App">
-      <ItemList addItem={this.addItem}/>
-      <shoppingCart cart={this.state.boo} subTotal={formatPrice(subTotal)} />
+      <ItemList addItem={this.addItem} />
+      <ShoppingCart cart={this.state.Cart} subTotal={subTotal} tax={tax||0} />
+      <Checkout  />
       </div>
     )
   }
