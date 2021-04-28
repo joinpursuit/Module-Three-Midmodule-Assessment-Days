@@ -18,9 +18,9 @@ class App extends React.Component {
   this.data = productData
 
   }
-  addToCart = (item) => {
+  addToCart = (product) => {
   let purchase = this.state.purchase
-  this.setState({purchase: purchase.concat(item)})
+  this.setState({purchase: purchase.concat(product)})
   }
 
   render() {
@@ -49,7 +49,8 @@ class App extends React.Component {
         </div>
 
         <div className = "checkout">
-        <Checkout />
+        <Checkout 
+        total = {total}/>
 
         </div>
 
