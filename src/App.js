@@ -15,19 +15,11 @@ class App extends React.Component {
     }
   }
 
-  // addCart = (item) => {
-  //   console.log(item)
-  //   this.setState((prevState) => {
-  //     return { cart: [item, ...prevState.cart], subtotal: item.price + prevState.subtotal }
-  //   })
-  // }
 
   addCart=(item)=>{
     const { cart, subtotal } = this.state;
-    cart.push(item)
-    subtotal.push(item.price)
     this.setState({
-      cart: cart, subtotal: subtotal
+      cart:[...cart, item], subtotal: [...subtotal, item.price]
      
     })
   }

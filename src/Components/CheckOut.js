@@ -16,9 +16,9 @@ class CheckOut extends Component {
     handleSubmit = (e) =>{
         e.preventDefault()
         const { firstName, lastName, email, creditCard, zipCode} =this.state
-        if (firstName.length> 1 && lastName.length> 1 && email.length>1 &&creditCard.length!=16 && zipCode.length===5) {
+        if (firstName.length> 1 && lastName.length> 1 && email.length>1 &&creditCard.length!==16 && zipCode.length===5) {
            alert('Credit card number is not valid')
-          } else if(firstName.length> 1 && lastName.length> 1 && email.length>1 && creditCard.length===16 && zipCode.length!=5) {
+          } else if(firstName.length> 1 && lastName.length> 1 && email.length>1 && creditCard.length===16 && zipCode.length!==5) {
            alert('Zip code is not valid')
           } else if (firstName.length> 1 && lastName.length> 1&& email.length>1 &&creditCard.length===16 && zipCode.length===5){
             alert(`Yey, Purchase complete You will be charged $${this.props.total}`)

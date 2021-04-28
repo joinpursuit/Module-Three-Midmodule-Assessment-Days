@@ -1,7 +1,5 @@
 import React from 'react'
 function AddToCart ({ cart, totalSum }){
-    console.log(totalSum)
-    
    const cartCollection = cart.map((item)=>{
         return <li> {item.name}: {item.price.toLocaleString("en-US", {style:"currency", currency:"USD"})}</li>
 
