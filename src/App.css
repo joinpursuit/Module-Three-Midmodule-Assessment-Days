@@ -1,16 +1,18 @@
-.Main{
+.Products{
     display: grid;
+    grid-template-columns: 2fr 1fr;
 }
 .ItemList img{
     height: 150px;
     width: auto;
 }
-.ItemList li{
-    list-style: none;
-}
-.Cart{
+
+.ItemList ul{
+    display: flex;
+    flex-wrap: wrap;
 
 }
-.CheckOut{
 
+.EachItem{
+    width: 50%;
 }
