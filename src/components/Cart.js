@@ -1,4 +1,10 @@
-const Cart = () => {
+const Cart = ({ checkeoutItem }) => {
+    const checkoutList= checkeoutItem.map(product => {
+        return (
+            //item name price
+        <li>{product.name}: {product.price.toFixed(2)}</li>
+        )
+    })
     return (
         <section>
             <h2>Cart</h2>

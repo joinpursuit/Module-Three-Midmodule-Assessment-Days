@@ -26,7 +26,7 @@ export default class App extends Component {
       <div className="Products">
         <Products product={productData} addToCart={this.addToCart} />
       </div>
-      <Cart />
+      <Cart checkoutItem={checkoutItem} />
       <Checkout />
       </>
     )
