@@ -12,15 +12,16 @@
 //         </div>
 //     )
 // };
-const ProductCard = ({products}) => {
-    const { id, name, price, description, img } = products
+const ProductCard = ({product, addToCart}) => {
+    const { id, name, price, description, img } = product
     return (
         <li>
             <h3>{name}</h3>
             <img src={img} alt="pic"/>
             <p>{description}</p>
             <p>Price: {price.toFixed(2)}</p>
-            <button>Add To Cart</button>
+            
+            <button onClick={() => addToCart(product)}>Add To Cart</button>
         </li>
         
     )

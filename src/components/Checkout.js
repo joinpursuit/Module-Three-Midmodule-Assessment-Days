@@ -20,8 +20,10 @@ class Checkout extends Component {
 
         <label htmlFor="">Zip Code</label>
         <input type="text"/>
-        
+
         <button>Buy Now</button>
         </>
     }
 }
+
+export default Checkout
