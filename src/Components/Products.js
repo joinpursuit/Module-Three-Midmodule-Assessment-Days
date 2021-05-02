@@ -1,13 +1,14 @@
 import React from 'react';
 import Product from './Product';
+import './Products.css'
 
 
 const Products = ({products}) =>{
-    const productComponent = products.map((item, i)=>{
-        return <Product key={i} data={item} />
+    const productComponent = products.map(item=>{
+        return <Product key={item.id} data={item} />
     })
     return (
-        <main>
+        <main className='Products'>
             <h2>My Garage Sale</h2>
             {productComponent}
         </main>

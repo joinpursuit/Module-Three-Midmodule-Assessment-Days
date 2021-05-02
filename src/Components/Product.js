@@ -1,15 +1,16 @@
 import React from 'react';
 import formatPrice from '../helpers/formatPrice'
 
-const Product = (props) =>{
+const Product = ({data}) =>{
+    const {name, price, img, description} = data
     return(
         <div>
-            <h3>{props.data.name}</h3>
-            <p>Price: {formatPrice(props.data.price)}</p>
-            <button onClick={props.addItems}>Add To Cart</button>
+            <h3>{name}</h3>
+            <p>Price: {formatPrice(price)}</p>
+            <button>Add To Cart</button>
             <br/>
-            <img src={props.data.img} alt=""></img>
-            <p>{props.data.description}</p>
+            <img src={img} alt=""></img>
+            <p>{description}</p>
         </div>
     )
 }
