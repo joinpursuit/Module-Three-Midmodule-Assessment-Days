@@ -21,10 +21,6 @@ export class App extends Component {
     })
   }
 
-  handleClick = () => {
-    
-  }
-
   render() {
     
     const {cartItems} = this.state
