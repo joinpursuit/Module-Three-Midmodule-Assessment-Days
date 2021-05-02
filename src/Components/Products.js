@@ -3,9 +3,9 @@ import Product from './Product';
 import './Products.css'
 
 
-const Products = ({products}) =>{
+const Products = ({products, addToCart}) =>{
     const productComponent = products.map(item=>{
-        return <Product key={item.id} data={item} />
+        return <Product key={item.id} product={item} addToCart={addToCart} />
     })
     return (
         <main className='Products'>
