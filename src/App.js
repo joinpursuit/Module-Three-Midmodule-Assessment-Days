@@ -17,9 +17,8 @@ class App extends React.Component {
 //added an item prop because this is the item that I want to pass to the list of items added to cart
   addToCart = (item) =>{
     const { items } = this.state
-    items.push(item)
     this.setState({
-      items: items
+      items: [...items, item]
     })
   }
 
@@ -33,7 +32,7 @@ class App extends React.Component {
       <div>
         <Products products={productData} addToCart={this.addToCart}/>
         <Cart items={items} subTotal={subTotal} tax={tax} total={total}/> 
-        <Checkout/> 
+        <Checkout total={total}/> 
       </div>
     )
   }
