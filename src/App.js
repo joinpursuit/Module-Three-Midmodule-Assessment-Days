@@ -36,7 +36,7 @@ class App extends React.Component {
         <h2>My Garage Sale</h2>
         <Products
         products = {this.data}
-        purchase={this.addToCart}/>
+        addToCart={this.addToCart}/>
         </div>
 
         <div className = "cart">

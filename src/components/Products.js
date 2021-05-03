@@ -14,6 +14,7 @@ function Products({products, addToCart}) {
             img = {product.img}
             description = {product.description}
             addToCart = {addToCart}
+            product={product}
            />
            )
         })}
