@@ -1,1 +1,7 @@
-
+.App {
+    display: grid;
+    grid-template-columns: 7fr 3fr;
+    grid-template-areas: "left right";
+}
+.left  { grid-area: left }
+.right { grid-area: right }
